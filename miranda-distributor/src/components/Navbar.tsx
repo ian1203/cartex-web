@@ -23,25 +23,21 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 md:bg-white/70 md:backdrop-blur supports-[backdrop-filter]:md:bg-white/60 border-b h-16">
-      <div className="mx-auto max-w-7xl px-4 md:px-6 h-full">
-        <nav
-          className="flex h-full items-center justify-between"
-          aria-label="Global"
-        >
-          {/* Brand */}
-          <div className="flex lg:flex-1 shrink-0">
-            <Link href="/" className="flex items-center gap-2 shrink-0" aria-label="Ir al inicio">
-              <Image
-                src="/logo/logo-cartex.svg"
-                alt="Cartex"
-                width={360}
-                height={120}
-                className="h-8 w-auto md:h-10"
-                priority
-              />
-            </Link>
-          </div>
+    <header className="sticky top-0 z-50 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between py-3 px-4 lg:px-8" aria-label="Global">
+        {/* Brand */}
+        <div className="flex lg:flex-1 shrink-0">
+          <Link href="/" className="flex items-center gap-2 shrink-0" aria-label="Ir al inicio">
+            <Image
+              src="/logo/logo-cartex.svg"
+              alt="Cartex"
+              width={180}
+              height={60}
+              className="h-9 w-auto md:h-12"
+              priority
+            />
+          </Link>
+        </div>
 
         {/* Mobile menu button */}
         <div className="flex lg:hidden">
@@ -148,8 +144,7 @@ export default function Navbar() {
             WhatsApp
           </a>
         </div>
-        </nav>
-      </div>
+      </nav>
     </header>
   );
 }

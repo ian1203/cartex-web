@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -21,6 +21,7 @@ export default function ContactoPage() {
   
   const {
     register,
+    control,
     handleSubmit,
     reset,
     formState: { errors },
@@ -29,8 +30,8 @@ export default function ContactoPage() {
   });
 
   const onSubmit = async (data: LeadFormData) => {
-    // Validar WhatsApp (10 dígitos)
-    const whatsappValue = data.whatsapp?.replace(/\D/g, '') || '';
+    // Normalizar WhatsApp (10 dígitos)
+    const whatsappValue = (data.whatsapp ?? '').replace(/\D/g, '');
     if (!/^\d{10}$/.test(whatsappValue)) {
       toast.error('El WhatsApp debe tener exactamente 10 dígitos.');
       return;
@@ -217,21 +218,33 @@ export default function ContactoPage() {
                         <Label htmlFor="whatsapp">WhatsApp *</Label>
                         <div className="mt-1 flex rounded-md shadow-sm">
                           <span className="inline-flex items-center rounded-l-md border border-neutral-300 bg-neutral-50 px-3 text-neutral-700 text-sm">+52</span>
-                          <input
-                            id="whatsapp"
-                            type="tel"
-                            inputMode="numeric"
-                            pattern="\\d{10}"
-                            maxLength={10}
-                            {...register('whatsapp')}
-                            className="block w-full rounded-r-md border border-neutral-300 bg-white px-3 py-2 text-sm focus:ring-2 focus:ring-neutral-900 focus:border-neutral-900 placeholder:text-neutral-400"
-                            placeholder="10 dígitos"
-                            required
+                          <Controller
+                            name="whatsapp"
+                            control={control}
+                            rules={{
+                              validate: (v) => v && v.replace(/\D/g, '').length === 10 || 'Ingresa 10 dígitos',
+                            }}
+                            render={({ field }) => (
+                              <input
+                                id="whatsapp"
+                                type="tel"
+                                inputMode="numeric"
+                                maxLength={10}
+                                value={(field.value ?? '').replace(/\D/g, '')}
+                                onChange={(e) => {
+                                  const onlyDigits = e.target.value.replace(/\D/g, '').slice(0, 10);
+                                  field.onChange(onlyDigits);
+                                }}
+                                className="block w-full rounded-r-md border border-neutral-300 bg-white px-3 py-2 text-sm focus:ring-2 focus:ring-neutral-900 focus:border-neutral-900 placeholder:text-neutral-400"
+                                placeholder="10 dígitos"
+                                required
+                              />
+                            )}
                           />
                         </div>
                         <p className="mt-1 text-xs text-neutral-500">Ingresa 10 dígitos (ej. 2293652572).</p>
                         {errors.whatsapp && (
-                          <p className="text-sm text-red-600" role="alert">{errors.whatsapp.message}</p>
+                          <p className="text-sm text-red-600" role="alert">{String(errors.whatsapp.message)}</p>
                         )}
                       </div>
 

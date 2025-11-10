@@ -125,23 +125,15 @@ export default function Footer({ className = "", variant = "transparent" }: Foot
   if (isOverlay) {
     return (
       <footer className={cn(
-        "relative z-20 text-white backdrop-blur-0 md:backdrop-blur-sm",
+        "relative z-20 w-full text-white min-h-[320px] bg-[url('/images/hero/hero-bebes.jpg')] bg-cover bg-center",
         className
       )}>
-        <section className="relative overflow-hidden min-h-[260px] md:min-h-[340px]">
-          {/* Background image */}
-          <div
-            aria-hidden
-            className="absolute inset-0 -z-10"
-            style={{ backgroundImage: "url('/images/hero/hero-bebes.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
-          />
-          {/* Dark gradient overlay */}
-          <div aria-hidden className="absolute inset-0 -z-10 bg-black/25" />
-          {/* Content */}
-          <div className="relative z-10 border-t border-white/20">
-            {footerContent}
-          </div>
-        </section>
+        {/* Dark gradient overlay */}
+        <div aria-hidden className="absolute inset-0 bg-black/30" />
+        {/* Content */}
+        <div className="relative z-10 border-t border-white/20">
+          {footerContent}
+        </div>
       </footer>
     );
   }
