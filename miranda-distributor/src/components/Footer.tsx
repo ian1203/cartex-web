@@ -11,17 +11,8 @@ export default function Footer({ className = "", variant = "transparent" }: Foot
   const isTransparent = variant === "transparent";
   const isOverlay = variant === "overlay";
   
-  return (
-    <footer className={cn(
-      "relative z-20",
-      isTransparent
-        ? "border-t border-white/20 bg-transparent text-white"
-        : isOverlay
-        ? "bg-white/10 backdrop-blur-md border-t border-white/20 text-white"
-        : "bg-brand-dark text-white",
-      className
-    )}>
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+  const footerContent = (
+    <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
@@ -40,13 +31,13 @@ export default function Footer({ className = "", variant = "transparent" }: Foot
             <div className="space-y-2 text-sm text-white/90">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <a href="https://wa.me/522293652572" className="hover:text-white transition-colors">
+                <a href="https://wa.me/522293652572" className="hover:text-white/80 transition-colors">
                   +52 229 365 2572
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:comer.cartex@gmail.com" className="hover:text-white transition-colors">
+                <a href="mailto:comer.cartex@gmail.com" className="hover:text-white/80 transition-colors">
                   comer.cartex@gmail.com
                 </a>
               </div>
@@ -61,16 +52,16 @@ export default function Footer({ className = "", variant = "transparent" }: Foot
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white">Enlaces</h4>
             <div className="space-y-2 text-sm text-white/90">
-              <Link href="/catalogo" className="block hover:text-white transition-colors">
+              <Link href="/catalogo" className="block hover:text-white/80 transition-colors">
                 Catálogo
               </Link>
-              <Link href="/marca/miranda" className="block hover:text-white transition-colors">
+              <Link href="/marca/miranda" className="block hover:text-white/80 transition-colors">
                 Marca Miranda
               </Link>
-              <Link href="/como-comprar" className="block hover:text-white transition-colors">
+              <Link href="/como-comprar" className="block hover:text-white/80 transition-colors">
                 Cómo comprar
               </Link>
-              <Link href="/faq" className="block hover:text-white transition-colors">
+              <Link href="/faq" className="block hover:text-white/80 transition-colors">
                 FAQ
               </Link>
             </div>
@@ -80,10 +71,10 @@ export default function Footer({ className = "", variant = "transparent" }: Foot
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white">Legal</h4>
             <div className="space-y-2 text-sm text-white/90">
-              <Link href="/aviso-privacidad" className="block hover:text-white transition-colors">
+              <Link href="/aviso-privacidad" className="block hover:text-white/80 transition-colors">
                 Aviso de privacidad
               </Link>
-              <Link href="/terminos" className="block hover:text-white transition-colors">
+              <Link href="/terminos" className="block hover:text-white/80 transition-colors">
                 Términos y condiciones
               </Link>
               <div className="text-xs text-white/80">
@@ -129,6 +120,41 @@ export default function Footer({ className = "", variant = "transparent" }: Foot
           </div>
         </div>
       </div>
+  );
+
+  if (isOverlay) {
+    return (
+      <footer className={cn(
+        "relative z-20 text-white backdrop-blur-0 md:backdrop-blur-sm",
+        className
+      )}>
+        <section className="relative overflow-hidden min-h-[260px] md:min-h-[340px]">
+          {/* Background image */}
+          <div
+            aria-hidden
+            className="absolute inset-0 -z-10"
+            style={{ backgroundImage: "url('/images/hero/hero-bebes.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+          />
+          {/* Dark gradient overlay */}
+          <div aria-hidden className="absolute inset-0 -z-10 bg-black/25" />
+          {/* Content */}
+          <div className="relative z-10 border-t border-white/20">
+            {footerContent}
+          </div>
+        </section>
+      </footer>
+    );
+  }
+  
+  return (
+    <footer className={cn(
+      "relative z-20",
+      isTransparent
+        ? "border-t border-white/20 bg-transparent text-white"
+        : "bg-brand-dark text-white",
+      className
+    )}>
+      {footerContent}
     </footer>
   );
 }

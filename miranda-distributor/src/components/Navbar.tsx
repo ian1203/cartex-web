@@ -23,10 +23,10 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-white/10">
-      <div className="mx-auto max-w-7xl px-6">
+    <header className="sticky top-0 z-50 bg-white/80 md:bg-white/70 md:backdrop-blur supports-[backdrop-filter]:md:bg-white/60 border-b h-16">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 h-full">
         <nav
-          className="flex h-16 md:h-20 items-center justify-between"
+          className="flex h-full items-center justify-between"
           aria-label="Global"
         >
           {/* Brand */}
@@ -37,7 +37,7 @@ export default function Navbar() {
                 alt="Cartex"
                 width={360}
                 height={120}
-                className="block max-h-16 md:max-h-24 w-auto object-contain leading-none"
+                className="h-8 w-auto md:h-10"
                 priority
               />
             </Link>
@@ -52,8 +52,8 @@ export default function Navbar() {
               </Button>
             </SheetTrigger>
 
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col space-y-4 mt-6">
+            <SheetContent side="right" className="w-[85vw] sm:w-[400px] p-6 z-[70] bg-white/95 backdrop-blur-md">
+              <div className="flex flex-col gap-5 mt-2">
                 {navigation.map((item) => {
                   const isActive = pathname === item.href;
                   return (
