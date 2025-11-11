@@ -27,13 +27,13 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between py-3 px-4 lg:px-8" aria-label="Global">
         {/* Brand */}
         <div className="flex lg:flex-1 shrink-0">
-          <Link href="/" className="flex items-center gap-2 shrink-0" aria-label="Ir al inicio">
+          <Link href="/" className="flex items-center gap-2 shrink-0 -my-1" aria-label="Ir al inicio">
             <Image
               src="/logo/logo-cartex.svg"
               alt="Cartex"
-              width={180}
-              height={60}
-              className="h-9 w-auto md:h-12"
+              width={100}
+              height={50}
+              className="h-20 w-auto md:h-24"
               priority
             />
           </Link>
@@ -69,30 +69,26 @@ export default function Navbar() {
                   );
                 })}
 
-                <div className="pt-4 border-t space-y-3">
-                  <Button asChild className="w-full" variant="outline">
-                    <a
-                      href="https://instagram.com/cartexmx"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Abrir Instagram de Cartex"
-                    >
-                      <FaInstagram className="mr-2 h-4 w-4" />
-                      @cartexmx
-                    </a>
-                  </Button>
+                <div className="pt-4 border-t flex gap-3">
+                  <a
+                    href="https://instagram.com/cartexmx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Abrir Instagram de Cartex"
+                    className="inline-flex items-center justify-center rounded-lg border px-3 py-2 hover:bg-neutral-50 transition-colors"
+                  >
+                    <FaInstagram className="h-5 w-5" />
+                  </a>
 
-                  <Button asChild className="w-full" variant="outline">
-                    <a
-                      href="https://wa.me/522293652572"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Abrir chat de WhatsApp"
-                    >
-                      <SiWhatsapp className="mr-2 h-4 w-4" />
-                      WhatsApp
-                    </a>
-                  </Button>
+                  <a
+                    href="https://wa.me/522293652572"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Abrir chat de WhatsApp"
+                    className="inline-flex items-center justify-center rounded-lg border px-3 py-2 hover:bg-neutral-50 transition-colors"
+                  >
+                    <SiWhatsapp className="h-5 w-5" />
+                  </a>
                 </div>
               </div>
             </SheetContent>
@@ -127,10 +123,9 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Abrir Instagram de Cartex"
-            className="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm leading-none hover:bg-neutral-50"
+            className="inline-flex items-center justify-center rounded-lg border px-3 py-1.5 hover:bg-neutral-50 transition-colors"
           >
-            <FaInstagram className="h-4 w-4" />
-            <span className="hidden sm:inline">@cartexmx</span>
+            <FaInstagram className="h-5 w-5" />
           </a>
 
           <a
@@ -138,10 +133,9 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Abrir chat de WhatsApp"
-            className="inline-flex items-center gap-2 rounded-lg border px-3 py-1.5 text-sm leading-none hover:bg-neutral-50"
+            className="inline-flex items-center justify-center rounded-lg border px-3 py-1.5 hover:bg-neutral-50 transition-colors"
           >
-            <SiWhatsapp className="h-4 w-4" />
-            WhatsApp
+            <SiWhatsapp className="h-5 w-5" />
           </a>
         </div>
       </nav>

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface GalleryImage {
   src: string;
@@ -25,6 +26,14 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
   if (images.length === 0) return null;
 
   return (
@@ -35,7 +44,7 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
         </h3>
         <div className="mt-8 relative">
           {/* Contenedor del carrusel */}
-          <div className="relative aspect-[16/9] overflow-hidden rounded-lg bg-gray-100">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-lg bg-gray-100 group">
             {images.map((img, index) => (
               <div
                 key={img.src}
@@ -53,6 +62,26 @@ export default function GalleryCarousel({ images }: GalleryCarouselProps) {
                 />
               </div>
             ))}
+            
+            {/* Botones de navegación */}
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={goToPrevious}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                  aria-label="Imagen anterior"
+                >
+                  <ChevronLeft className="h-6 w-6 text-gray-900" />
+                </button>
+                <button
+                  onClick={goToNext}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full p-2 shadow-lg transition-all opacity-0 group-hover:opacity-100"
+                  aria-label="Imagen siguiente"
+                >
+                  <ChevronRight className="h-6 w-6 text-gray-900" />
+                </button>
+              </>
+            )}
           </div>
 
           {/* Indicadores */}
