@@ -182,7 +182,7 @@ function CatalogoContent() {
                 variant="outline" 
                 size="lg"
               >
-                <a href="https://wa.me/522293652572" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/522294828125" target="_blank" rel="noopener noreferrer">
                   WhatsApp
                 </a>
               </Button>

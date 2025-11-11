@@ -353,7 +353,7 @@ export default function GuiaDeTallasPage() {
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://wa.me/522293652572"
+                  href="https://wa.me/522294828125"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-brand-pink hover:bg-brand-pink/90"

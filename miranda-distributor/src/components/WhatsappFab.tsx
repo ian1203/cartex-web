@@ -3,7 +3,7 @@
 import { Phone } from "lucide-react";
 
 export default function WhatsappFab() {
-  const wa = process.env.NEXT_PUBLIC_WA_NUMBER || "522293652572";
+  const wa = process.env.NEXT_PUBLIC_WA_NUMBER || "522294828125";
   const href = `https://wa.me/${wa}`;
   return (
     <a

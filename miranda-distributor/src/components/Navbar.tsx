@@ -81,7 +81,7 @@ export default function Navbar() {
                   </a>
 
                   <a
-                    href="https://wa.me/522293652572"
+                    href="https://wa.me/522294828125"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Abrir chat de WhatsApp"
@@ -129,7 +129,7 @@ export default function Navbar() {
           </a>
 
           <a
-            href="https://wa.me/522293652572"
+            href="https://wa.me/522294828125"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Abrir chat de WhatsApp"

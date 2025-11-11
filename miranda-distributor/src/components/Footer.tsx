@@ -31,8 +31,8 @@ export default function Footer({ className = "", variant = "transparent" }: Foot
             <div className="space-y-2 text-sm text-white/90">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <a href="https://wa.me/522293652572" className="hover:text-white/80 transition-colors">
-                  +52 229 365 2572
+                <a href="https://wa.me/522294828125" className="hover:text-white/80 transition-colors">
+                  +52 229 482 8125
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -101,7 +101,7 @@ export default function Footer({ className = "", variant = "transparent" }: Foot
                 <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5 fill-current"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 12 15.8 2.8 2.8 0 0 0 12 9.2zM17.5 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
               </a>
               <a
-                href="https://wa.me/522293652572"
+                href="https://wa.me/522294828125"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/90 hover:text-white transition-colors"

@@ -64,7 +64,7 @@ export default function RootLayout({
             addressCountry: "MX",
           }}
           sameAs={[
-            "https://wa.me/522293652572",
+            "https://wa.me/522294828125",
             "mailto:comer.cartex@gmail.com",
           ]}
         />

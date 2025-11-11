@@ -36,12 +36,8 @@ export default function LeadForm({
   });
 
   const onSubmit = async (data: LeadFormData) => {
-    // Validar WhatsApp (10 dígitos)
+    // Normalizar WhatsApp
     const whatsappValue = data.whatsapp?.replace(/\D/g, '') || '';
-    if (!/^\d{10}$/.test(whatsappValue)) {
-      toast.error('El WhatsApp debe tener exactamente 10 dígitos.');
-      return;
-    }
 
     // Validar email
     const emailInput = document.getElementById('email') as HTMLInputElement;
@@ -159,15 +155,13 @@ export default function LeadForm({
                   id="whatsapp"
                   type="tel"
                   inputMode="numeric"
-                  pattern="\\d{10}"
-                  maxLength={10}
                   {...register('whatsapp')}
                   className="block w-full rounded-r-md border border-neutral-300 bg-white px-3 py-2 text-sm focus:ring-2 focus:ring-neutral-900 focus:border-neutral-900 placeholder:text-neutral-400"
-                  placeholder="10 dígitos"
+                  placeholder="Número de teléfono"
                   required
                 />
               </div>
-              <p className="mt-1 text-xs text-neutral-500">Ingresa 10 dígitos (ej. 2293652572).</p>
+              <p className="mt-1 text-xs text-neutral-500">Ingresa tu número de teléfono.</p>
               {errors.whatsapp && (
                 <p className="text-sm text-red-600" role="alert">{errors.whatsapp.message}</p>
               )}
