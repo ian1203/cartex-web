@@ -61,7 +61,7 @@ export default function HomeHeroFull({ onOpenLeadForm }: Props) {
           </h1>
 
           <p className="mt-6 text-lg leading-8 text-white/95 drop-shadow-md">
-            Somos comercializadores oficiales de <strong>Miranda</strong>, con
+            Somos distribuidores oficiales de <strong>Miranda</strong>, con
             selección cuidada para boutiques y mayoristas. Descubre la elegancia
             y calidad de la moda infantil española.
           </p>

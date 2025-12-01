@@ -23,7 +23,7 @@ export default function Hero({ onOpenLeadForm }: HeroProps) {
               Moda infantil española en México
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 max-w-2xl">
-              Somos comercializadores oficiales de <strong>Miranda</strong>, con selección cuidada
+              Somos distribuidores oficiales de <strong>Miranda</strong>, con selección cuidada
               para boutiques y mayoristas. Descubre la elegancia y calidad de la moda infantil española.
             </p>
 

@@ -38,7 +38,7 @@ const policies = [
     items: [
       { policy: 'Pedido mínimo', value: '$30,000 MXN' },
       { policy: 'Tiempo de confirmación', value: '24-48 horas' },
-      { policy: 'Modificaciones', value: 'Hasta 7 días antes del envío' },
+      { policy: 'Modificaciones', value: 'Hasta 15 días después de realizado el pedido' },
     ],
   },
   {
@@ -52,8 +52,8 @@ const policies = [
   {
     category: 'Entregas',
     items: [
-      { policy: 'Tiempo de entrega', value: '15-20 días hábiles' },
-      { policy: 'Costo de envío', value: 'Gratis pedidos +$25,000 MXN' },
+      { policy: 'Tiempo de entrega', value: 'Primavera-Verano: Marzo-Abril | Otoño-Invierno: Septiembre-Octubre' },
+      { policy: 'Costo de envío', value: 'Según destino y volumen' },
       { policy: 'Cobertura', value: 'Todo México' },
     ],
   },
@@ -61,8 +61,6 @@ const policies = [
     category: 'Garantías',
     items: [
       { policy: 'Defectos de fábrica', value: '30 días para reportar' },
-      
-      { policy: 'Devoluciones', value: 'No aplica por cambio de opinión' },
     ],
   },
 ];

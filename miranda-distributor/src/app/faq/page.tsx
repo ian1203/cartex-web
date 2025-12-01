@@ -37,68 +37,60 @@ const faqData = [
     ],
   },
   {
-    category: 'Pedidos y Compras',
-    icon: CreditCard,
-    questions: [
-      {
-        question: '¿Cuál es el pedido mínimo?',
-        answer: 'El pedido mínimo es de $30,000 MXN por temporada. Esto nos permite mantener precios competitivos y garantizar la disponibilidad de productos.',
-      },
-      {
-        question: '¿Cómo puedo hacer un pedido?',
-        answer: 'Puedes solicitar información a través de nuestro formulario de contacto, por WhatsApp o email. Te enviaremos el catálogo completo con precios mayoristas.',
-      },
-      {
-        question: '¿Qué formas de pago aceptan?',
-        answer: 'Aceptamos transferencias bancarias y cheques certificados. El pago se realiza 30% anticipo y 70% contra entrega.',
-      },
-      {
-        question: '¿Puedo modificar mi pedido después de confirmarlo?',
-        answer: 'Sí, puedes hacer modificaciones hasta 7 días antes de la fecha de envío programada, sujeto a disponibilidad de stock.',
-      },
-    ],
-  },
-  {
     category: 'Envíos y Entregas',
     icon: Truck,
     questions: [
       {
         question: '¿Cuánto tiempo tarda en llegar mi pedido?',
-        answer: 'El tiempo de entrega es de 15-20 días hábiles desde la confirmación del pedido y pago del anticipo.',
+        answer:
+          'Las fechas de entrega dependen de la temporada. Para Primavera-Verano las entregas se realizan entre marzo y abril; para Otoño-Invierno, entre septiembre y octubre.',
       },
       {
         question: '¿Hacen envíos a todo México?',
-        answer: 'Sí, realizamos envíos a todo el territorio mexicano. El costo de envío es gratuito para pedidos superiores a $25,000 MXN.',
+        answer:
+          'Sí, realizamos envíos a todo el territorio mexicano. El costo de envío se calcula según el destino y el volumen del pedido.',
       },
       {
         question: '¿Cómo puedo rastrear mi pedido?',
-        answer: 'Te proporcionamos el número de guía una vez que el pedido sale de nuestras instalaciones. Puedes rastrearlo directamente con la paquetería.',
-      },
-      {
-        question: '¿Qué pasa si mi pedido llega dañado?',
-        answer: 'Si recibes un pedido con daños, debes reportarlo dentro de las primeras 24 horas. Nos hacemos cargo de los costos de reemplazo y envío.',
+        answer:
+          'Te proporcionamos el número de guía una vez que el pedido sale de nuestras instalaciones. Puedes rastrearlo directamente con la paquetería.',
       },
     ],
   },
   {
-    category: 'Cambios y Devoluciones',
+    category: 'Pedidos y Compras',
+    icon: CreditCard,
+    questions: [
+      {
+        question: '¿Cuál es el pedido mínimo?',
+        answer:
+          'El pedido mínimo es de $30,000 MXN por temporada. Esto nos permite mantener precios competitivos y garantizar la disponibilidad de productos.',
+      },
+      {
+        question: '¿Cómo puedo hacer un pedido?',
+        answer:
+          'Puedes solicitar información a través de nuestro formulario de contacto, por WhatsApp o email. Te enviaremos el catálogo completo con precios mayoristas.',
+      },
+      {
+        question: '¿Qué formas de pago aceptan?',
+        answer:
+          'Aceptamos transferencias bancarias y cheques certificados. El pago se realiza 30% anticipo y 70% contra entrega.',
+      },
+      {
+        question: '¿Puedo modificar mi pedido después de confirmarlo?',
+        answer:
+          'Puedes solicitar modificaciones hasta 15 días después de realizado el pedido, sujeto a disponibilidad de stock y condiciones comerciales vigentes.',
+      },
+    ],
+  },
+  {
+    category: 'Atención y Soporte',
     icon: RotateCcw,
     questions: [
       {
-        question: '¿Puedo cambiar productos por talla?',
-        answer: 'Sí, aceptamos cambios por talla dentro de los primeros 15 días después de recibir el pedido, siempre que tengamos stock disponible.',
-      },
-      {
-        question: '¿Qué productos no se pueden cambiar?',
-        answer: 'No aceptamos cambios en productos personalizados, productos de temporada pasada, o productos que hayan sido usados o lavados.',
-      },
-      {
-        question: '¿Hay costo por cambios?',
-        answer: 'Los cambios por talla no tienen costo adicional. Solo se cobra el envío si el cambio genera un costo adicional de logística.',
-      },
-      {
-        question: '¿Puedo devolver productos si cambio de opinión?',
-        answer: 'No aceptamos devoluciones por cambio de opinión. Solo procesamos devoluciones por defectos de fábrica o errores en el pedido.',
+        question: '¿Qué pasa si mi pedido llega dañado?',
+        answer:
+          'Si recibes un pedido con daños, debes reportarlo dentro de las primeras 24 horas. Nos hacemos cargo de los costos de reemplazo y envío, según verificación del caso.',
       },
     ],
   },
